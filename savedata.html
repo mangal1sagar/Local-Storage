@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <script>
+        function save() {
+            var name = document.getElementById("fname").value;
+            var mycity = document.getElementById("mycity").value;
+            var myaddress = document.getElementById("myaddress").value;
+
+            localStorage.setItem("fullname", name); // to store in localStorage
+            localStorage.setItem("city", mycity);
+            localStorage.setItem("address", myaddress);
+
+            alert("Data stored Sucessfully");
+            window.location.href = "userdata.html";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Store The Data in localstorage</h1>
+    <p>localstorage.setItem("variable", "value"); </p>
+
+    <p>Enter Full Name :<input type="text" id="fname" /></p>
+    <p>Enter City Name :<input type="text" id="mycity" /></p>
+    <p>Enter Address : <textarea id="myaddress" cols="30"></textarea></p>
+
+    <button onclick="save()">Save User</button>
+
+</body>
+
+</html>

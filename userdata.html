@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function getData(){
+            var name = localStorage.getItem("fullname");
+            var cityname = localStorage.getItem("city");
+            var myaddress = localStorage.getItem("address");
+
+            var data = "<p> Full Name : "+ name +"</p>";
+            data += "<p> City Name : "+cityname+ "</p>";
+            data += "<p> Full Address : "+myaddress+"</p>";
+
+            document.getElementById("container").innerHTML = data;
+        }
+        function clearData(){
+            localStorage.clear();
+            window.location.reload(); // to reload the current page
+        }
+    </script>
+</head>
+<body onload="getData()">
+
+    <h1>User Details</h1>
+    <p>localStorage.setItem("variable");</p>
+    <div id="container"></div>
+
+    <a href="savedata.html"> Go Back </a>
+    <button onclick="clearData()">clear</button>
+</body>
+</html>
